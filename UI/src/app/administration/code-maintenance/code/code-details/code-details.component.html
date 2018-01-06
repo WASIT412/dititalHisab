@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="modal fade" id="confirmationModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <p class="font-16 font-bold">Are you sure, you want to delete?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="sureToDeleteAddressCode()" class="btn btn-primary">Yes, please.</button>
+          <button type="button" (click)="noSureToDeleteAddressCode()" class="btn btn-outline btn-primary-outline" data-dismiss="modal">No, cancel.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="row justify-content-md-start" *ngIf="addressCode != undefined">
+  <div class="col-sm-12">
+    <div class="page-section">
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col-sm-12 mb-3">
+            <label>
+              Active
+              <mat-slide-toggle class="example-margin" [checked]="addressCode.Inactive" [disabled]="true">
+              </mat-slide-toggle>
+            </label>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">Code </label>
+            <output> {{addressCode.Code}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">Description </label>
+            <output> {{addressCode.Description}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">French Description </label>
+            <output> {{addressCode.FrenchDescription}} </output>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

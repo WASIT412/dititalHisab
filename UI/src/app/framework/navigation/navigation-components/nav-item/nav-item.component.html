@@ -1,0 +1,16 @@
+<li class="nav-item">
+      <ng-container  *ngIf="navItem.children; else childNav" >
+
+        <a class="nav-link"  routerLinkActive="active-link" routerLink="{{navItem.linkUrl }}"><i class="{{navItem.iconName}}"></i>{{navItem.title}}   <i class="fa fa-angle-down"></i></a>
+
+      <ul class="dropdown-submenu">
+          <ng-container *ngFor="let navSubItem of navItem.children" >
+        <ccs-nav-item [navItem]="navSubItem"></ccs-nav-item>
+    </ng-container>
+        </ul>
+    </ng-container>
+        <ng-template #childNav>
+                <a class="nav-link"  routerLinkActive="active-link" routerLink="{{navItem.linkUrl }}"><i class="{{navItem.iconName}}"></i>{{navItem.title}}</a>
+                <ccs-nav-child [component]="navItem.path"></ccs-nav-child>
+            </ng-template>
+       </li>

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row d-flex d-md-block flex-nowrap wrapper">
+
+    <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar" style="width:260px;">
+      <div class="list-group border-0 card text-center text-md-left">
+      <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-wrench"></i> <span class="d-none d-md-inline">Incidents</span> </a>
+        <div class="collapse" id="menu1">
+          <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false"><i class="fa fa-folder-open"></i>Claims</a>
+          <div class="collapse" id="menu1sub1">
+            <a routerLink="claim" class="list-group-item" data-parent="#menu1sub1">Add New Claim</a>
+
+              <a *ngFor='let claim of claims'   routerLink="{{'claim/' + claim.ResourceId }}" class="list-group-item" data-parent="#menu1sub1">
+                <i *ngIf="claim.Id" class="fa fa-star"></i>
+                <i *ngIf="claim.Id == undefined" class="fa fa-star-o"></i>
+               {{ '#' + claim.ResourceId + ' ' + (claim.client? claim.client : '')}} 
+               
+              <!-- * denotes that claim has not been save to database -->
+              </a>
+       
+    
+          </div>
+        </div>
+       </div>
+    </div>
+
+
+  </div>
+</div>

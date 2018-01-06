@@ -1,0 +1,19 @@
+@import 'colors';
+/*side panel text color*/
+$asidebg-color: rgba(59, 76, 97, 1);
+/*side panel text color*/
+aside {
+    background: $asidebg-color;
+    width: 60px;
+    /*left: -15px;*/
+    position: relative;
+    height: 100%;
+    text-align:center;
+}
+.table-row .col-md-auto {
+    height: 100vh;
+}
+
+body {
+    overflow: hidden;
+}

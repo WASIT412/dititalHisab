@@ -1,0 +1,48 @@
+@import "all";
+@import "mixins";
+
+.et-dl {
+  color: $btn-color;
+  font-size: $body-font-size + 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.error {
+  color: red;
+  font-variant: inherit;
+  font-size: small;
+  font-style: normal;
+  font-weight: normal;
+  top: -15px;
+  position: relative;
+}
+
+label {
+  margin-bottom: 0;
+  transform: none !important;
+  top: -17px !important;
+
+  font: {
+    weight: normal;
+    size: $body-font-size - 4px;
+    family: $font-family-global;
+  }
+}
+
+output {
+  display: inline-block;
+  top: -15px;
+  position: relative;
+  font-size: $body-font-size - 2px;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+.control-section {
+  overflow: auto;
+  height: calc(100vh - 245px);
+}

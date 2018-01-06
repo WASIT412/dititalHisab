@@ -1,0 +1,15 @@
+<ul class="nav flex-column justify-content-start">
+  <li *ngFor="let navItem of navs; let i = index" >
+      <a href="javascript:void(0);"  (click)="setClickedNav(navItem.path)"   [class.active]="navItem.path == selectedNav"><i  class="{{navItem.iconName}}"></i></a>
+      <div class="submenu">
+          <strong>{{navItem.title}}</strong>
+
+          <ul *ngIf="navItem.children" class="nav flex-column">
+        <ng-container   *ngFor="let navSubItem of navItem.children">
+                  <ccs-nav-item [navItem]="navSubItem"></ccs-nav-item>
+                </ng-container>
+          </ul>
+
+          </div>
+  </li>
+  </ul>

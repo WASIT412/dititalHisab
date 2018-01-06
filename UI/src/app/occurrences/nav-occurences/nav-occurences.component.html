@@ -1,0 +1,16 @@
+
+          <ul *ngIf="claims?.length > 0" class="dropdown-submenu show-menu">
+
+              <li class="nav-item" *ngFor='let claim of claims'  >
+                  <a *ngIf="showAdd" routerLink="claim" class="nav-link" data-parent="#menu1sub1">Add New Claim</a>
+                <a *ngIf="claim.ResourceId != 0"   routerLink="{{'occurrences/claim/' + claim.ResourceId }}" class="nav-link" data-parent="#menu1sub1">
+                  <i *ngIf="claim.Id" class="fa fa-star"></i>
+                  <i *ngIf="claim.Id == undefined" class="fa fa-star-o"></i>
+                 {{ '#' + claim.ResourceId + ' ' + (claim.client? claim.client : '')}} 
+                 
+                <!-- * denotes that claim has not been save to database -->
+                </a>
+                </li>
+         
+</ul>
+        

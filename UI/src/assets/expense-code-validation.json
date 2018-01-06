@@ -1,0 +1,67 @@
+{
+  "Code": {
+    "required": {
+      "value": true,
+      "message": "Code is required."
+    },
+    "minLength": {
+      "value": 2,
+      "message": "Minimum of 2 characters are allowed."
+    },
+    "maxLength": {
+      "value": 2,
+      "message": "Maximum of 2 characters are allowed."
+    }
+  },
+  "Description": {
+    "required": {
+      "value": true,
+      "message": "Description is required."
+    },
+    "maxLength": {
+      "value": 50,
+      "message": "Maximum of 50 characters are allowed."
+    }
+  },
+  "GlAccountCode": {
+    "required": {
+      "value": true,
+      "message": "GlAccountCode is required."
+    }
+  },
+  "MinAmount": {
+    "required": {
+      "value": true,
+      "message": "MinAmount is required."
+    }
+  },
+  "DefaultUnitRate": {
+    "required": {
+      "value": true,
+      "message": "DefaultUnitRate is required."
+    },
+    "regex": {
+      "value": "^(0*[1-9][0-9]*(\\.[0-9]+)?|0+\\.[0-9]*[1-9][0-9]*)$",
+      "message": "Not a valid unit rate."
+    }
+  },
+  "DeductibleUnits": {
+    "required": {
+      "value": true,
+      "message": "required."
+    },
+    "dependsOn": [
+      {
+        "property": "DefaultUnitRate",
+        "value": "0",
+        "operator": "gt",
+        "rules": {
+          "required": {
+            "value": true,
+            "message": "required."
+          }
+        }
+      }
+    ]
+  }
+}

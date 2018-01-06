@@ -1,0 +1,236 @@
+<div *ngIf="!flag"><h6>Loading...</h6></div>
+<div class="row" *ngIf="flag">
+  <!--<section class="left-section col">
+    <div class="row justify-content-center">
+      <div class="page-section col-sm-5">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label class="e-float-input" style="font-size:13px">French Description </label>
+                </div>
+                <div class="col-sm-12">
+                  <output style="color:black; font-size:15px"> {{expenseCode.FrenchDescription}} </output>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <label class="e-float-input" style="font-size:13px"> GL Account Code </label>
+                </div>
+                <div class="col-sm-12">
+                  <output style="color:black; font-size:15px"> {{expenseCode.GlAccountCode}} </output>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <label class="e-float-input" style="font-size:13px"> Min Amount </label>
+                </div>
+                <div class="col-sm-12">
+                  <output style="color:black; font-size:15px"> {{expenseCode.MinAmount}} </output>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <label class="e-float-input" style="font-size:13px"> Default Unit Rate </label>
+                </div>
+                <div class="col-sm-12">
+                  <output style="color:black; font-size:15px"> {{expenseCode.DefaultUnitRate}} </output>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <label class="e-float-input" style="font-size:13px"> Dectuctible Units </label>
+                </div>
+                <div class="col-sm-12">
+                  <output style="color:black; font-size:15px"> {{expenseCode.DeductibleUnits}} </output>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <label>Select Option(s)</label>
+                </div>
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" [checked]="expenseCode.IsMileage" [disabled]="true" />
+                      <label> Is Mileage: </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" [checked]="expenseCode.FlatFee" [disabled]="true" />
+                      <label> Flat Fee: </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" [checked]="expenseCode.BlendedFee" [disabled]="true" />
+                      <label> Blended Fee: </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input type="checkbox" [checked]="expenseCode.AdditionalDescriptionRequired" [disabled]="true" />
+                      <label> Addtional Desc Req'd: </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <label>Select Tax/Charge Option</label>
+                </div>
+                <div class="col-sm-3">
+                  <input type="checkbox" [checked]="expenseCode.AlwaysTax" [disabled]="true" />
+                  <label> Always Tax: </label>
+                </div>
+                <div class="col-sm-3">
+                  <input type="checkbox" [checked]="expenseCode.NoTax" [disabled]="true" />
+                  <label> No Tax: </label>
+                </div>
+                <div class="col-sm-3">
+                  <input type="checkbox" [checked]="expenseCode.NoCharge" [disabled]="true" />
+                  <label> No Charge: </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 mt-3">
+                  <section class="example-section">
+                    <label>
+                      Active
+                      <mat-slide-toggle class="example-margin" [checked]="checked">
+                      </mat-slide-toggle>
+                      Inactive
+                    </label>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+  <section class="left-section col">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row page-section justify-content-start">
+        <div class="col">
+          <div class="row">
+            <div class="col-sm-12">
+              <slide-toggle label='Active' checked='expenseCode.inactive' name='Inactive' [form]="form"></slide-toggle>
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col col-5">
+          <div class="row">
+            <div class="col-sm-12">
+              <label class="e-float-input">Code*</label>
+              <output>Code</output>
+            </div>
+            <div class="col-sm-12">
+              <label class="e-float-input">Description*</label>
+              <output>Description</output>
+            </div>
+            <div class="col-sm-12">
+              <label class="e-float-input">French Description</label>
+              <output>{{expenseCode.FrenchDescription}}</output>
+            </div>
+            <div class="col-sm-12">
+              <label class="e-float-input">Select Gl Account*</label>
+              <output>{{expenseCode.GLAccountCode}}</output>
+            </div>
+            <div class="col-sm-12">
+              <label class="e-float-input">Min Account*</label>
+              <output>{{expenseCode.MinAmount}}</output>
+            </div>
+          </div>
+        </div>
+        <div class="col col-7">
+          <div class="row">
+            <div class="col-sm-12">
+              <label class="e-float-input">Default Unit Rate</label>
+              <output>{{expenseCode.DefaultUnitRate}}</output>
+            </div>
+            <div class="col-sm-12">
+              <label class="e-float-input">Deductible Units</label>
+              <output>{{expenseCode.DeductibleUnits}}</output>
+            </div>
+            <div class="col-sm-12">
+              <label class="e-float-input">Amount Approved</label>
+              <output>{{expenseCode.ApprovalThresholdAmount}}</output>
+            </div>
+            <div class="col-sm-12">
+              <label class="e-float-input">Min Characters</label>
+              <output>{{expenseCode.MinCharacters}}</output>
+            </div>
+            <div class="col-sm-12">
+              <div class="col">
+                <label>Select an option</label>
+              </div>
+              <div class="w-100"></div>
+              <div class="col">
+                <div class="row  justify-content-md-start">
+                  <div class="col-md-auto">
+                    <form-radio label="Always Tax" [form]="form" groupName="change" name="AlwaysTax"></form-radio>
+                  </div>
+                  <div class="col-md-auto">
+                    <form-radio label="No Tax" [form]="form" groupName="change" name="NoTax"></form-radio>
+                  </div>
+                  <div class="col-md-auto">
+                    <form-radio label="No Charge" [form]="form" groupName="change" name="NoCharge"></form-radio>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div class="col">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <slide-toggle label='Is Mileage' name='IsMileage' [checked]="expenseCode.isMileage" [form]="form"></slide-toggle>
+                  </div>
+                  <div class="col-sm-4">
+                    <slide-toggle label='Blended Fee' name='BlendedFee' [checked]="expenseCode.blendedFee" [form]="form"></slide-toggle>
+                  </div>
+                  <div class="col-sm-4">
+                    <slide-toggle label="Addl Desc Req'd" name='AdditionalDescriptionRequired' [checked]="expenseCode.additionalDescriptionRequired" [form]="form"></slide-toggle>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <slide-toggle label='Is Reimbursable' name='Inactive' checked='true' [form]="form"></slide-toggle>
+                  </div>
+                  <div class="col-sm-4">
+                    <slide-toggle label='Flat Fee' name='FlatFee' [checked]="expenseCode.flatFee" [form]="form"></slide-toggle>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+          <ej-grid #grid [dataSource]='data' allowSorting='true' [allowFiltering]='true' allowPaging='true' [filterSettings]='filterOptions'
+                   showColumnMenu='true' [editSettings]='editSettings' [toolbar]='toolbar'>
+            <e-columns>
+              <!--<e-column field='UserId' headerText='User Id' width=150></e-column>
+              <e-column field='ThresholdAmount' headerText='Threshold Amount' width=150></e-column>-->
+              <e-column field='UserID' headerText='User ID' width='150'></e-column>
+              <e-column field='ThresholdAmount' headerText='Threshold Amount' width='150'></e-column>
+            </e-columns>
+          </ej-grid>
+        </div>
+      </div>
+
+    </form>
+  </section>
+</div>
+

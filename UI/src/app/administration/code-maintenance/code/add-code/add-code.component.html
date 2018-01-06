@@ -1,0 +1,36 @@
+<section class="row justify-content-md-start">
+  <div class="col-sm-12">
+    <div class="page-section">
+      <div class="row">
+        <div class="col-4">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-12 mb-4">
+                <slide-toggle [form]="form" label='Active' name='Inactive' disabled="false"></slide-toggle>
+              </div>
+              <div class="col-12">
+                <form-text label="{{lblCode}}" [readOnly]="id" [form]="form" name="Code" [isrequired]="false"
+                           [autofocus]="true" [errors]="errors" [processValidation]="processValidation"></form-text>
+                <!--<label *ngIf="form.get('Code').invalid  && processValidation" [ngClass]="'error'"> Code is required. </label>-->
+                <!-- <ccs-error [control]="form.get('Code')" [error]="errors['Code']" [processValidation]="processValidation" [ngClass]="'error'"></ccs-error>-->
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <form-text label="Description*" [form]="form" name="Description" [isrequired]="false" [errors]="errors"
+                             [processValidation]="processValidation"></form-text>
+                </div>
+                <!--<label *ngIf="form.get('Description').invalid  && processValidation" [ngClass]="'error'"> Description is required. </label>-->
+                <!--<ccs-error [control]="form.get('Description')" [error]="errors['Description']" [processValidation]="processValidation" [ngClass]="'error'"></ccs-error>-->
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <form-text label="French Description" [form]="form" name="FrenchDescription"></form-text>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

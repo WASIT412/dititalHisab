@@ -1,0 +1,6 @@
+<div id="modalTarget" #targetModal class="control-section">
+  <!-- Render Button to open the modal Dialog -->
+  <button ej-button id='modalbtn' #modalButton (click)="modalBtnClick()">Open Modal</button>
+  <!-- Render modal Dialog -->
+  <ej-dialog id="modalDialog" #modalDialog [isModal]='isModal' [header]='header' [content]='content' [buttons]='buttons' [target]='target' [width]='width' [animationSettings]='animationSettings'></ej-dialog>
+</div>

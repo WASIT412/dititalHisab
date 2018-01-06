@@ -1,0 +1,45 @@
+<section class="row justify-content-md-start" *ngIf="glAccountCode != undefined">
+  <div class="col-sm-12">
+    <div class="page-section">
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col-sm-12 mb-3">
+            <label>
+              Active
+              <mat-slide-toggle class="example-margin" [checked]="glAccountCode.Inactive" [disabled]="true">
+              </mat-slide-toggle>
+            </label>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">Code </label>
+            <output> {{glAccountCode.Code}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">Description </label>
+            <output> {{glAccountCode.Description}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">French Description </label>
+            <output> {{glAccountCode.FrenchDescription}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">Sequence </label>
+            <output> {{glAccountCode.Sequence}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">GLCode </label>
+            <output> {{glAccountCode.GLCode}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">RptDescription </label>
+            <output> {{glAccountCode.RptDescription}} </output>
+          </div>
+          <div class="col-sm-12">
+            <label class="e-float-input">RptFrenchDescription </label>
+            <output> {{glAccountCode.RptFrenchDescription}} </output>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

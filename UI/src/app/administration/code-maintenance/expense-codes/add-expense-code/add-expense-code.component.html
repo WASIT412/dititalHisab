@@ -1,0 +1,137 @@
+<section class="row justify-content-between">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="col-sm-12">
+      <div class="page-section">
+        <div class="row">
+          <div class="col mb-4">
+            <div class="row">
+              <div class="col-sm-12">
+                <slide-toggle label='Active' name='InActive' checked='true' [form]="form"></slide-toggle>
+              </div>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-4">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <form-text label="Code*" [form]="form" name="Code" [isrequired]="false" [autofocus]="true" [errors]="errors" [processValidation]="processValidation"></form-text>
+                </div>
+                <!--<ccs-error [control]="form.get('Code')" [error]="errors['Code']" [processValidation]="processValidation" [ngClass]="'error'">
+                </ccs-error>-->
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <form-text label="Description*" [form]="form" name="Description" [isrequired]="false" [errors]="errors" [processValidation]="processValidation"></form-text>
+                </div>
+                <!--<ccs-error [control]="form.get('Description')" [error]="errors['Description']" [processValidation]="processValidation" [ngClass]="'error'">
+                </ccs-error>-->
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <form-text label="French Description" [form]="form" name="FrenchDescription" [isrequired]="false"></form-text>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label>Select Gl Account*</label>
+                  <form-select [data]="glCodes" name="GlAccountCode" *ngIf='expenseCode' [value]='expenseCode.GlAccountCode' [form]="form"></form-select>
+                  <form-select [data]="glCodes" name="GlAccountCode" *ngIf='!expenseCode' [form]="form"></form-select>
+                </div>
+                <!--<ccs-error [control]="form.get('GlAccountCode')" [error]="errors['GlAccountCode']" [processValidation]="processValidation"
+                  [ngClass]="'error'"> </ccs-error>-->
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <form-text label="Min Account*" [form]="form" name="MinAmount" [isrequired]="false" [errors]="errors" [processValidation]="processValidation">
+                  </form-text>
+                </div>
+                <!-- <ccs-error [control]="form.get('MinAmount')" [error]="errors['MinAmount']" [processValidation]="processValidation" [ngClass]="'error'"></ccs-error>
+            -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col-6 offset-md-1">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <form-text label="Default Unit Rate" [form]="form" name="DefaultUnitRate" [isrequired]="false" [errors]="errors" [processValidation]="processValidation"></form-text>
+                    </div>
+                    <!--<ccs-error [control]="form.get('DefaultUnitRate')" [error]="errors['DefaultUnitRate']" [processValidation]="processValidation"
+                      [ngClass]="'error'"> </ccs-error>-->
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <form-text label="Deductible Units" [form]="form" name="DeductibleUnits" [isrequired]="false" [errors]="errors" [processValidation]="processValidation"></form-text>
+                    </div>
+                    <!--<ccs-error [control]="form.get('DeductibleUnits')" [error]="errors['DeductibleUnits']" [processValidation]="processValidation"
+                      [ngClass]="'error'"> </ccs-error>-->
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <form-text label="Amount Approved" [form]="form" name="MinAmount" [isrequired]="false" [errors]="errors" [processValidation]="processValidation"></form-text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div class="col offset-md-1">
+                <div class="col">
+                  <label>Select an option</label>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                  <div class="row  justify-content-md-start">
+                    <div class="col-md-auto">
+                      <form-radio label="Always Tax" [form]="form" group="AlwaysTax,NoTax,NoCharge" name="AlwaysTax"></form-radio>
+                    </div>
+                    <div class="col-md-auto">
+                      <form-radio label="No Tax" [form]="form" group="AlwaysTax,NoTax,NoCharge" name="NoTax"></form-radio>
+                    </div>
+                    <div class="col-md-auto">
+                      <form-radio label="No Charge" [form]="form" group="AlwaysTax,NoTax,NoCharge" name="NoCharge"></form-radio>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col mt-3">
+                  <div class="row">
+                    <div class="col-md-auto">
+                      <slide-toggle label='Is Mileage' name='IsMileage' checked='true' [form]="form"></slide-toggle>
+                    </div>
+                    <div class="col-md-auto">
+                      <slide-toggle label='Blended Fee' name='BlendedFee' checked='true' [form]="form"></slide-toggle>
+                    </div>
+                    <div class="col-md-auto">
+                      <slide-toggle label="Addl Desc Req'd" name='AdditionalDescriptionRequired' checked='true' [form]="form"></slide-toggle>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-md-auto">
+                      <slide-toggle label='Is Reimbursable' name='IsReimbursable' checked='true' [form]="form"></slide-toggle>
+                    </div>
+                    <div class="col-md-auto">
+                      <slide-toggle label='Flat Fee' name='FlatFee' checked='true' [form]="form"></slide-toggle>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <ej-grid #grid [dataSource]='ThresholdsDetails.value' allowSorting='true' [allowFiltering]='true' allowPaging='true' [filterSettings]='filterOptions'
+              (actionComplete)='OnActionComplete($event)' showColumnMenu='true' [editSettings]='editSettings' [toolbar]='toolbar'>
+              <e-columns>
+                <e-column field='UserID' [validationRules]='useridrules'  isPrimaryKey='true' headerText='User Id' width=150></e-column>
+                <e-column field='ThresholdAmount' [validationRules]='thresholdAmountRule' headerText='Threshold Amount' width=150></e-column>
+              </e-columns>
+            </ej-grid>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

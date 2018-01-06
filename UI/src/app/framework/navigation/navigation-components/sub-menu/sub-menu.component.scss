@@ -1,0 +1,138 @@
+@import 'colors';
+
+/*Aside panel and top heder Icon size*/
+$icon-size: 28px;
+/*Aside panel and top heder Icon size*/
+/*body font size*/
+$bodyFontSize: 16px;
+/*body font size*/
+
+aside {
+  ul.justify-content-start {
+    > li {
+      text-align: left;
+      width: 100%;
+
+      > a {
+        height: 60px;
+        width: 60px;
+        text-align: center;
+        display: block;
+        padding: 15px;
+
+        > i {
+          font-size: $icon-size !important;
+        }
+      }
+    }
+  }
+
+  .active {
+    background: rgba(22, 155, 213, 1) !important;
+
+    &:hover {
+      background: rgba(22, 155, 213, 1) !important;
+    }
+  }
+
+  a {
+    font-size: $bodyFontSize;
+    color: #fff;
+    position: relative;
+
+    i {
+      font-size: $icon-size - 10px !important;
+    }
+
+    &:hover {
+      background: #006d97 !important;
+      color: $color-white;
+    }
+  }
+}
+
+.move {
+  left: 60px !important;
+}
+
+.dropdown-submenu {
+  list-style-type: none;
+  display: none;
+}
+
+.show-menu {
+  display: block;
+}
+
+.badge {
+  padding: 2px 6px 4px;
+  border-radius: 50%;
+}
+
+.fa-close.float-right {
+  margin: 3px 0px;
+}
+
+
+.active {
+  background-color: $color-secondary; /* Add an active/current color */
+}
+
+.submenu {
+  padding-bottom: 80px;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  left: -800px;
+  min-width: 300px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: rgba(22, 155, 213, 1);
+  top: 0;
+  z-index: 99;
+  height: calc(100vh - 150px);
+  position: absolute;
+  text-align: left;
+  overflow: auto;
+
+  strong {
+    font: {
+      weight: bold;
+      /*size: $bodyFontSize + 6px;*/
+    }
+
+    color: $color-white;
+    display: block;
+    padding: 12px 20px 12px 20px;
+  }
+
+  i:first-child {
+    padding: 0 12px 0 0;
+  }
+
+  a {
+    &:hover {
+      border-radius: 4px;
+    }
+
+    i.fa.fa-angle-down {
+      font-size: $icon-size + 10px !important;
+      position: absolute;
+      top: -5px;
+      display: inline-block;
+      margin: 3px 5px;
+    }
+  }
+}
+
+a.nav-link.active-link {
+  background-color: #006d97;
+}
+
+.table-row .col-md-auto {
+  height: calc(100vh - 80px);
+}
+
+body {
+  overflow: hidden;
+}

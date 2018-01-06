@@ -1,0 +1,61 @@
+<div class="page-heading row" *ngIf="navTree?.length > 0">
+    <div class="col">
+      <h2 class="heading">
+        {{ currentNav.title}}
+
+      </h2>
+    </div>
+    <div class="col">
+      <!-->
+        FormType
+        {
+            List = 0,
+            Add = 1,
+            Edit = 2,
+            Details = 3
+        }-->
+
+      <ul class="nav justify-content-end"  *ngIf="formType !== type.None">
+          <ng-container *ngIf="formType === type.Add || formType === type.Edit ">
+          <li>
+              <button class="icon-btn" (click)="submit()">
+                <i class="fa fa-save"></i>
+              </button>
+            </li>
+            </ng-container>
+            <ng-container *ngIf="formType !== type.Add && formType !== type.Edit">
+        <li>
+          <button class="icon-btn"  (click)="reload()">
+            <i class="fa fa-refresh"></i>
+          </button>
+       </li>
+      </ng-container>
+        <ng-container *ngIf="formType === type.List">
+          <li >
+            <button class="icon-btn" (click)="add()">
+              <i class="fa fa-plus-circle"></i>
+            </button>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="formType === type.Details">
+          <li>
+            <button class="icon-btn"  (click)="edit()" >
+              <i class="fa fa-pencil"></i>
+            </button>
+         </li>
+          <li>
+              <button class="icon-btn" (click)="delete()">
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </li>
+        </ng-container>
+        <ng-container *ngIf="formType != type.List">
+          <li>
+            <button type="reset" (click)="revert()" class="icon-btn">
+              <i class="fa fa-close"></i>
+            </button>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>

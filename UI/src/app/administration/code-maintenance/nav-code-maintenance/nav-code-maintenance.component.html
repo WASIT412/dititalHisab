@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row d-flex d-md-block flex-nowrap wrapper">
+
+    <div class="col-md-12 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar" style="width:260px;">
+      <div class="list-group border-0 card text-center text-md-left">
+        <ul class="navbar-nav">
+          <li *ngFor="let route of routes" class="nav-item">
+            <!-- <a class="nav-link" routerLink="/{{route.path}}" routerLinkActive="active"><i class="fa fa-{{getIconName(route.path)}}"></i></a> -->
+            <a class="nav-link" routerLink="{{route.path}}" routerLinkActive="active">
+              <i class="fa fa-{{getIconName(route.path)}}"></i>{{route.path}}
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav" *ngIf="dynamicRoute">
+          <li class="nav-item">
+            <i (click)="addNewExpenseCode()"> Add New Expense Code</i>
+          </li>
+          <li class="nav-item">
+            <a *ngFor="let dRoute of dynamicRoute" routerLink="{{'expense-code/add/' + dRoute.code }}" class="list-group-item">
+              <i *ngIf="dRoute.code" class="fa fa-star"></i>
+              <i *ngIf="dRoute.code == undefined" class="fa fa-star-o"></i>
+              {{ '#' + dRoute.code }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main"  style="background-color:aliceblue;">
+      <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
+      <div class="page-header">
+        Code Maintenance content
+      </div>
+    </main> -->
+
+  </div>
+</div>

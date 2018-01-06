@@ -1,0 +1,44 @@
+<loading-icon [isLoading]="isbusy">
+</loading-icon>
+
+<section class="row justify-content-md-start">
+  <div class="col-12">
+    <div class="page-section">
+      <div class="row">
+        <div *ngIf="refreshing">
+          <h6>Refreshing...</h6>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="e-float-input">
+            <form #form="ngForm" (ngSubmit)="search(form)">
+              <input type="text" name="searchText" id="searchText" ngModel autocomplete="off" />
+              <span class="e-float-line"></span>
+              <label class="e-float-text">Search</label>
+              <button type="submit" class="input-right-icon rigt-25">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-12 pb-3">
+          <ej-grid #grid [dataSource]='data' allowPaging='true' allowSorting='true' height="530" [sortSettings]='initialSort' [pageSettings]='initialPage'
+            [allowFiltering]="true" [filterSettings]='filterOptions' showColumnMenu='true' *ngIf="showgrid">
+            <e-columns>
+
+              <e-column field='Code' headerText='Code' width='120' textAlign="left" [filter]='filter'>
+                <ng-template #template let-data>
+                  <a class="nav-link" routerLink="{{data.Code}}" routerLinkActive="active">
+                    {{data.Code}}
+                  </a>
+                </ng-template>
+              </e-column>
+              <e-column field='Description' headerText='Description' width='150'></e-column>
+              <e-column field='FrenchDescription' headerText='French Description' width='150' textAlign="left"></e-column>
+              <e-column field='MinAmount' headerText='Minimum Amount' width='100' textAlign="left"></e-column>
+            </e-columns>
+          </ej-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

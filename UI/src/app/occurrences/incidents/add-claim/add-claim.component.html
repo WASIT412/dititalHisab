@@ -1,0 +1,350 @@
+<div class="row">
+  <section class="left-section col">
+    <nav class="row" aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb w-100">
+        <li class="breadcrumb-item"><a href="#">CLAIMS</a></li>
+        <li class="breadcrumb-item" aria-current="page">Add New Claim</li>
+      </ol>
+    </nav>
+    <div class="page-heading row">
+      <div class="col">
+        <h2 class="heading">Add New Claim</h2>
+      </div>
+      <div class="col">
+        <ul class="nav justify-content-end">
+          <li>
+            <button class="icon-btn">
+              <i class="fa fa-save"></i>
+            </button>
+          </li>
+          <li>
+            <button class="icon-btn">
+              <i class="fa fa-close"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-section">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-4">
+                <p>
+                  <label>Status:</label> Open Confirmed
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Date/Time Instruction</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Loss Type*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <span class="input-icon">
+                    <i class="fa fa-search"></i>
+                  </span>
+                  <input type="text" class="form-control" required [(ngModel)]="claim.client" />
+                  <label>Client*</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Qualification</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required [(ngModel)]="claim.branch" />
+                  <label>Branch*</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Catastrophe</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required [(ngModel)]="claim.contact" />
+                  <label>Client Contact</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Initial Estimate*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Contact Tel Number</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Region</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Client Reference</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Type of Work*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <span class="input-icon">
+                    <i class="fa fa-search"></i>
+                  </span>
+                  <input type="text" class="form-control" required />
+                  <label>Policy #</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Category</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>SLA</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Business Type</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Date/Time of Incident*</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Notes</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Date/Time of Discovery*</label>
+                </div>
+              </div>
+            </div>
+            <h3 class="page-section-heading">Insured Details</h3>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Name*</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Title*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Postcode*</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Forename*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Address*</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Surname*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>VAT Status*</label>
+                </div>
+              </div>
+              <div class="col-sm-3 offset-md-1">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Email Address</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3 col-sm-offset-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Home Tel Number</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3 col-sm-offset-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Business Tel Number</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3 col-sm-offset-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Mobile Tel Number</label>
+                </div>
+              </div>
+            </div>
+            <h3 class="page-section-heading">Loss Location</h3>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <select class="form-control" required>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                  <label>Address Type*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Postcode*</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" required />
+                  <label>Address*</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

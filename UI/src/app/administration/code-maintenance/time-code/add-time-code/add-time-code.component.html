@@ -1,0 +1,110 @@
+<div class="row">
+  <section class="col">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="row page-section justify-content-around">
+        <div class="col-4">
+          <div class="row">
+            <div class="col-sm-12">
+              <slide-toggle label='Active' name='Inactive' checked='true' disabled="false" [form]="form"></slide-toggle>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="Code*" [form]="form" name="Code" [isrequired]="false"></form-text>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="Description*" [form]="form" name="Description" [isrequired]="false"></form-text>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="French Description" [form]="form" name="FrenchDescription" [isrequired]="false"></form-text>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="Min Account*" [form]="form" name="MinAmount" [isrequired]="false"></form-text>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-6 offset-md-1">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <form-text label="Include In List" [form]="form" name="IncludeInList" [isrequired]="false"></form-text>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <form-text label="Service Item Code" [form]="form" name="ServiceItemCode" [isrequired]="false"></form-text>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col offset-md-1">
+            <div class="col">
+              <label>Select an option</label>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+              <div class="row  justify-content-md-start">
+                <div class="col-md-auto">
+                  <form-radio label="No Charge" [form]="form" name="AlwaysTax" value="AlwaysTax"></form-radio>
+                </div>
+                <div class="col-md-auto">
+                  <form-radio label="No Tax" [form]="form" name="NoTax" value="NoTax"></form-radio>
+                </div>
+                <div class="col-md-auto">
+                  <form-radio label="No Charge" [form]="form" name="NoCharge" value="NoCharge"></form-radio>
+                </div>
+              </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+              <div class="row">
+                <div class="col-md-auto">
+                  <slide-toggle label='Unbillable' name='Unbillable' checked='true' disabled="false" [form]="form"></slide-toggle>
+                </div>
+                <div class="col-md-auto">
+                  <slide-toggle label='Disallow Back Date' name='DisallowBackDate' checked='true' disabled="false" [form]="form"></slide-toggle>
+                </div>
+                <div class="col-md-auto">
+                  <slide-toggle label="Addl Desc Req'd" name='Add1DescReqd' checked='true' disabled="false" [form]="form"></slide-toggle>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-auto">
+                  <slide-toggle label='Service Fee' name='ServiceFee' checked='true' disabled="false" [form]="form"></slide-toggle>
+                </div>
+                <div class="col-md-auto">
+                  <slide-toggle label='Enable Email' name='EnableEmail' checked='true' disabled="false" [form]="form"></slide-toggle>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-100">
+          <div class="form-group">
+            <ej-grid #grid [dataSource]='girddata' [editSettings]='editSettings' [toolbar]='toolbar' height='173px' (actionComplete)='OnActionComplete($event)'>
+              <e-columns>
+                <e-column field='TemplateCode' headerText='TemplateCode' width=120>
+                </e-column>
+                <e-column field='LossDescriptionCode' headerText='Loss Description Code' width=150></e-column>
+                <e-column field='AccountID' headerText='AccountID' width=150></e-column>
+                <e-column field='Organization' headerText='Organization' width=150></e-column>
+              </e-columns>
+            </ej-grid>
+          </div>
+        </div>
+        <div class="col">
+          <p>Form value: {{ form.value | json }}</p>
+        </div>
+      </div>
+    </form>
+
+  </section>
+</div>

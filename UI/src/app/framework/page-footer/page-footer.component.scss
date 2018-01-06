@@ -1,0 +1,14 @@
+@import "colors";
+@import "app";
+
+footer {
+  background: $headerandfooterbg;
+  color: $color-white;
+  padding: 20px 0 20px 0;
+ // margin-top: -53px;
+  p {
+    text-transform: capitalize;
+    font-size: $body-font-size - 4px;
+   // margin:0px;
+  }
+}

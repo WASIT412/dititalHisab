@@ -1,0 +1,10 @@
+<div class="container-fluid wrapper h-100 " *ngIf='load'>
+  <div class="center text-center">
+    <form [formGroup]="form" (ngSubmit)="letsGo()" novalidate>
+      <div class="form-group">
+        <form-select [data]="ddcountries" waterMark="Select Country" name="Country" [form]="form"></form-select>
+      </div>
+      <button class="e-btn e-primary btn-sm mt-2">Lets go</button>
+    </form>
+  </div>
+</div>

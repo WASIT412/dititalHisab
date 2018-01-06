@@ -1,0 +1,446 @@
+@import url( 'http://cdn.syncfusion.com/ej2/material.css');
+@import "colors";
+@import "all";
+@import url( 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// *:focus {
+//   outline: {
+//     width: 2px;
+//     style: auto;
+//     color: inherit;
+//   }
+// }
+
+.height {
+  height: 100%;
+}
+
+html {
+  @extend .height;
+}
+
+body {
+  font: {
+    family: $font-family-global;
+    size: $body-font-size;
+    weight: normal;
+  }
+
+  color: $section-color-body;
+  @extend .height;
+}
+
+.height-calc-100 {
+  height: calc(100% - 150px);
+}
+
+label {
+  font: {
+    family: $font-family-global;
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+.e-pager .e-currentitem,
+.e-pager .e-currentitem:hover {
+  background: #69bde8 !important;
+  position: relative;
+  top: 5px;
+  line-height: .8 !important;
+}
+
+.e-float-input:not(.e-input-group) .e-float-line::after,
+.e-float-input:not(.e-input-group) .e-float-line::before {
+  background: $global-blue-color;
+  transition: none;
+}
+
+.e-float-input input,
+.e-float-input textarea {
+  border-bottom-color: #949494 !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+  padding: 4px 0 7px;
+
+  font: {
+    weight: normal;
+    size: $body-font-size - 2px;
+    family: $font-family-global;
+  }
+}
+
+.form-check-label {
+  padding-left: 0 !important;
+}
+
+.e-float-input input:not(:focus):valid ~ label.e-float-text.e-label-bottom,
+.e-float-text {
+  font-size: $body-font-size;
+  color: rgba(0, 0, 0, 0.53) !important;
+}
+
+.e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after,
+.e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before,
+.e-input-group:not(.e-float-icon-left):not(.e-float-input)::after,
+.e-input-group:not(.e-float-icon-left):not(.e-float-input)::before {
+  background: $global-blue-color;
+}
+
+.e-bigger .e-float-input.e-small:not(.e-error) input:focus ~ label.e-float-text,
+.e-bigger .e-float-input.e-small:not(.e-error) textarea:focus ~ label.e-float-text,
+.e-bigger .e-float-input:not(.e-error) input:focus ~ label.e-float-text,
+.e-bigger .e-float-input:not(.e-error) textarea:focus ~ label.e-float-text,
+.e-float-input.e-bigger:not(.e-error) input:focus ~ label.e-float-text,
+.e-float-input.e-bigger:not(.e-error) textarea:focus ~ label.e-float-text,
+.e-float-input.e-small.e-bigger:not(.e-error) input:focus ~ label.e-float-text,
+.e-float-input.e-small.e-bigger:not(.e-error) textarea:focus ~ label.e-float-text,
+.e-float-input.e-small:not(.e-error) input:focus ~ label.e-float-text,
+.e-float-input.e-small:not(.e-error) textarea:focus ~ label.e-float-text,
+.e-float-input:not(.e-error) input:focus ~ label.e-float-text,
+.e-float-input:not(.e-error) textarea:focus ~ label.e-float-text,
+.e-small .e-float-input:not(.e-error) input:focus ~ label.e-float-text,
+.e-small .e-float-input:not(.e-error) textarea:focus ~ label.e-float-text {
+  color: $global-blue-color !important;
+}
+
+.e-float-input input label.e-float-text.e-label-top,
+.e-float-input input ~ label.e-label-top.e-float-text,
+.e-float-input input:focus ~ label.e-float-text,
+.e-float-input input:valid ~ label.e-float-text,
+.e-float-input input[disabled] ~ label.e-label-top.e-float-text,
+.e-float-input input[readonly] ~ label.e-label-top.e-float-text {
+  top: -9px;
+}
+
+.e-checkbox-wrapper .e-checkbox:focus + .e-frame.e-check,
+.e-checkbox-wrapper .e-frame.e-check {
+  background: none;
+  border: 1px solid #cccccc;
+
+  font: {
+    size: $body-font-size - 3px !important;
+  }
+}
+
+.e-checkbox-wrapper .e-frame {
+  border: 1px solid #cccccc;
+  height: 16px;
+  width: 16px;
+}
+
+.e-checkbox-wrapper .e-check::before {
+  content: "\E933";
+  color: #52b2e3;
+  background: #fff;
+  border: 0;
+  font-size: $body-font-size - 6px !important;
+  font-weight: bold;
+  top: -1px;
+  position: relative;
+  right: 0;
+}
+
+.e-checkbox-wrapper .e-label,
+.label {
+  color: rgba(0, 0, 0, 0.53) !important;
+
+  font: {
+    family: $font-family-global;
+    size: $body-font-size - 3px !important;
+  }
+}
+
+.label label {
+  padding-left: 15px;
+  top: 3px;
+  position: relative;
+}
+
+.e-control,
+.e-grid .e-table {
+  font: {
+    family: $font-family-global;
+  }
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(91, 194,244,.5) !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #5bc2f4 !important;
+}
+
+.mat-slide-toggle-thumb {
+  background-color: #b9b8b8 !important;
+}
+
+.mat-slide-toggle-bar {
+  background-color: rgba(185,183,183,.38) !important;
+}
+
+.e-float-input.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error) .e-input-in-wrap,
+.e-input-group.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error) .e-input-in-wrap,
+.e-input-group:not(.e-success):not(.e-warning):not(.e-error):not(.e-float-icon-left) {
+  border-color: rgba(0, 0, 0, 0.42);
+}
+
+.e-float-input.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled) .e-input-in-wrap:hover,
+.e-float-input:hover:not(.e-input-group):not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled) input:not([disabled]),
+.e-float-input:hover:not(.e-input-group):not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled) textarea:not([disabled]),
+.e-float-input:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),
+.e-input-group.e-float-icon-left:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled) .e-input-in-wrap:hover,
+.e-input-group:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left) {
+  border-color: rgba(0, 0, 0, 0.42);
+}
+
+.e-dropdownbase .e-list-item.e-active,
+.e-dropdownbase .e-list-item.e-active.e-hover {
+  background-color: #eee;
+  border-color: #fff;
+  color: $global-blue-color;
+}
+
+.e-ddl .e-input,
+.e-ddl .e-input[readonly],
+.e-ddl .e-options,
+.e-ddl-popup {
+  color: #666666 !important;
+  font-weight: normal;
+
+  font: {
+    family: $font-family-global - 3px;
+  }
+}
+
+.e-radio + label .e-label {
+  padding-left: 25px;
+}
+
+.e-input-group .e-ddl-icon::before {
+  content: "" !important;
+  color: #666666;
+}
+
+.e-radio + label::before {
+  border: 1px solid;
+  height: 16px;
+  width: 16px;
+  top: 2px;
+}
+
+.e-radio + label::after {
+  height: 16px;
+  width: 16px;
+  top: 2px;
+}
+
+.e-radio:checked + label::after {
+  background-color: $global-blue-color;
+  color: $global-blue-color;
+}
+
+.e-radio:checked + label::before {
+  border-color: $global-blue-color;
+}
+
+.e-radio:checked + label:hover::before {
+  border-color: $global-blue-color;
+}
+
+.e-radio:checked + label:hover::after {
+  background-color: $global-blue-color;
+}
+
+.e-dialog .e-dlg-header-content + .e-dlg-content {
+  padding: 18px !important;
+}
+
+.e-dialog .e-dlg-content {
+  padding: 18px !important;
+  overflow: unset;
+}
+
+.e-dlg-overlay {
+  position: fixed !important;
+}
+
+/* Breadcrumb Style Code Start*/
+.breadcrumb {
+  background: $global-blue-color;
+  margin: 0;
+  border-radius: 0;
+  font-weight: 500;
+  padding: 11px 15px;
+
+  li {
+    color: $color-white;
+    font-size: $body-font-size - 3px;
+
+    a {
+      color: $color-white;
+      font-size: $body-font-size - 3px;
+    }
+  }
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "\f105";
+  color: $color-white;
+
+  font: {
+    family: FontAwesome;
+    size: 10px;
+    weight: bold;
+  }
+}
+
+.breadcrumb-item a {
+  text-decoration: underline;
+}
+/* Breadcrumb Style Code End*/
+button {
+  background: none;
+  border: 0;
+}
+/* Page Title Style Code Start*/
+.page-heading {
+  background: $page-heading-bg;
+  color: $page-heading-color;
+  border-bottom: 1px solid #e4e4e4;
+
+  font: {
+    size: $body-font-size + 5px;
+  }
+}
+
+.heading {
+  color: #596B82;
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  font: {
+    size: $body-font-size + 5;
+    weight: 400;
+    style: normal;
+  }
+}
+
+.page-section-heading {
+  color: $page-sub-heading;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #3c4c60;
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: $body-font-size + 3px;
+}
+
+.icon-btn {
+  color: $btn-color;
+  font-size: $icon-size;
+  margin-top: 6px;
+  cursor: pointer;
+  margin-left: 15px;
+  padding: 0;
+}
+/* Page Title Style Code End*/
+
+.mat-slide-toggle {
+  margin-left: 23px;
+  position: relative;
+  top: 3px;
+}
+
+.input-right-icon {
+  right: 6px;
+}
+
+.input-icon,
+.input-left-icon,
+.input-right-icon {
+  position: absolute;
+  color: #54b2e2;
+  top: 1px;
+  cursor: pointer;
+}
+
+.page-section {
+  padding: 42px 40px 0;
+  overflow: auto;
+  height: calc(100vh - 240px);
+}
+
+.codetype {
+  text-decoration: underline !important;
+
+}
+
+.code-type li {
+  width: calc(100% / 4);
+}
+
+.has-error .e-float-input input,
+.has-error .e-float-input textarea {
+  border-bottom-color: #ff0000 !important;
+  border-bottom-width: 2px;
+}
+
+.e-pager .e-currentitem,
+.e-pager .e-numericitem:hover,
+.e-pager .e-spacing {
+  border-radius: 50% !important;
+  padding: 17px 0;
+  height: 42px !important;
+  width: 42px !important;
+}
+
+.e-numericcontainer {
+  top: 0;
+  position: relative;
+}
+
+.e-pager .e-icons {
+  font-size: 16px;
+  top: -7px;
+  position: relative;
+}
+
+.e-pager .e-pagerdropdown, .e-pager .e-pagerconstant {
+  // margin-top: -37px;
+  display: none;
+}
+
+.e-pager div.e-parentmsgbar {
+  padding-top: 23px;
+}
+
+.e-btn.e-primary {
+  background-color: #60b2e1;
+}
+
+.e-btn.e-primary:hover, .e-btn.e-primary:focus {
+  background-color: #80bfe4;
+}
+
+.e-input-group:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after {
+  background: #60b2e1;
+}
+
+.e-input-group:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after {
+  background: #60b2e1;
+}

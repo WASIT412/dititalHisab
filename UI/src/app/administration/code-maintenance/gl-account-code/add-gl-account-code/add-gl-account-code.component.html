@@ -1,0 +1,65 @@
+<section class="row justify-content-md-start">
+  <div class="col-sm-12">
+    <div class="page-section">
+      <div class="col-sm-4">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+          <div class="row">
+            <div class="col-sm-12 mb-4">
+              <slide-toggle [form]="form" label='Active' name='Inactive' disabled="false"></slide-toggle>
+            </div>
+
+            <div class="col-sm-12">
+              <form-text label="{{lblCode}}" [readOnly]="id" [form]="form" name="Code" [isrequired]="false" [errors]="errors" [processValidation]="processValidation" ></form-text>
+              <!--<label *ngIf="form.get('Code').invalid  && processValidation" [ngClass]="'error'"> Code is required. </label>-->
+             <!-- <ccs-error [control]="form.get('Code')" [error]="errors['Code']" [processValidation]="processValidation"
+                         [ngClass]="'error'"></ccs-error>-->
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="Description*" [form]="form" name="Description" [isrequired]="false" [errors]="errors" [processValidation]="processValidation" ></form-text>
+              </div>
+              <!--<label *ngIf="form.get('Description').invalid  && processValidation" [ngClass]="'error'"> Description is required. </label>-->
+             <!-- <ccs-error [control]="form.get('Description')" [error]="errors['Description']"
+                         [processValidation]="processValidation" [ngClass]="'error'"></ccs-error>-->
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="French Description" [form]="form" name="FrenchDescription"></form-text>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="Sequence*" [form]="form" name="Sequence" [errors]="errors" [processValidation]="processValidation" ></form-text>
+               <!-- <ccs-error [control]="form.get('Sequence')" [error]="errors['Sequence']" [processValidation]="processValidation"
+                           [ngClass]="'error'"></ccs-error>-->
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="GLCode*" [form]="form" name="GLCode" [errors]="errors" [processValidation]="processValidation" ></form-text>
+                <!--<ccs-error [control]="form.get('GLCode')" [error]="errors['GLCode']" [processValidation]="processValidation"
+                           [ngClass]="'error'"></ccs-error>-->
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="RptDescription" [form]="form" name="RptDescription" [errors]="errors['RptDescription']" [processValidation]="processValidation"></form-text>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <form-text label="RptFrenchDescription" [form]="form" name="RptFrenchDescription"  [errors]="errors['RptFrenchDescription']" [processValidation]="processValidation"></form-text>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

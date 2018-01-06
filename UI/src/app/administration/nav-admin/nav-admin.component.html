@@ -1,0 +1,9 @@
+<div class="submenu">
+  <strong>Administration</strong>
+  <ul class="nav flex-column">
+      <li  *ngFor="let route of routes" class="nav-item">
+          <a class="nav-link" routerLink="{{route.path}}" routerLinkActive="active"><i class="fa fa-{{getIconName(route.path)}}"></i>{{route.path}}</a>
+      </li>
+     
+  </ul>
+</div>

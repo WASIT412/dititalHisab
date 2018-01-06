@@ -1,0 +1,39 @@
+<!--Can be optimized defining keys in an array and iterating over-->
+<div *ngIf="control">
+  <label *ngIf="control.hasError('required')&&processValidation">
+    {{error.get('required')}}
+  </label>
+  <label *ngIf="control.hasError('minlength')&&processValidation">
+    {{error.get('minlength')}}
+  </label>
+  <label *ngIf="control.hasError('maxlength')&&processValidation">
+    {{error.get('maxlength')}}
+  </label>
+  <label *ngIf="control.hasError('min')&&processValidation">
+    {{error.get('min')}}
+  </label>
+  <label *ngIf="control.hasError('max')&&processValidation">
+    {{error.get('max')}}
+  </label>
+  <label *ngIf="control.hasError('isurl')&&processValidation">
+    {{error.get('isurl')}}
+  </label>
+  <label *ngIf="control.hasError('email')&&processValidation">
+    {{error.get('email')}}
+  </label>
+  <label *ngIf="control.hasError('isipaddress')&&processValidation">
+    {{error.get('isipaddress')}}
+  </label>
+  <label *ngIf="control.hasError('isphonenumber')&&processValidation">
+    {{error.get('isphonenumber')}}
+  </label>
+  <label *ngIf="control.hasError('iszipcode')&&processValidation">
+    {{error.get('iszipcode')}}
+  </label>
+  <label *ngIf="control.hasError('pattern')&&processValidation">
+    {{error.get('pattern')}}
+  </label>
+  <label *ngIf="control.hasError('notpattern')&&processValidation">
+    {{error.get('notpattern')}}
+  </label>
+</div>
